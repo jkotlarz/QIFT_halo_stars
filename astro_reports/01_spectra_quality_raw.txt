@@ -1,0 +1,26 @@
+================================================================================
+RAPORT JAKOŚCI WIDM I SIATKI DŁUGOŚCI FAL [raw]
+Wygenerowano: 2026-10-23 16:30:22
+================================================================================
+
+Siatka długości fal
+-------------------
+  Liczba widm                : 1729
+  Liczba pikseli             : 3000
+  Zakres λ                   : 3800.00 – 9000.00 Å
+  Krok Δλ: średni / mediana  : 1.7339 / 1.7339 Å
+  Krok Δλ: min / max         : 1.7339 / 1.7339 Å
+  Krok w log10(λ) (mediana)  : 1.177e-04
+  Siatka rosnąca monotonicznie: True
+  Efektywne R=λ/Δλ przy Hα   : 3785 (próbkowanie siatki, nie R instrumentu)
+  Prędkość na 1 piksel przy Hα: 79.2 km/s
+
+Strumień
+--------
+  Udział NaN w całej macierzy: 0.0000%
+  Gwiazd z co najmniej 1 NaN : 0
+  mediana strumienia     n=1729  mean=-0.220221  std=0.128758  min=-0.60116  q25=-0.326702  med=-0.219965  q75=-0.126413  max=0.188129
+  min strumienia         n=1729  mean=-3.72247  std=1.07576  min=-37.2361  q25=-4.14722  med=-3.75308  q75=-3.29961  max=-1.44881
+  max strumienia         n=1729  mean=1.61243  std=1.04625  min=0.458138  q25=1.36588  med=1.52597  q75=1.67211  max=33.0967
+  std strumienia         n=1729  mean=0.970177  std=0.0481317  min=0.851897  q25=0.936869  med=0.990728  q75=1.00796  max=1.07878
+  S/N (snrg)             n=1729  mean=89.41  std=65.67  min=30.1  q25=47.64  med=69.23  q75=104.2  max=665.4

@@ -1,0 +1,63 @@
+================================================================================
+RAPORT TOPOLOGII – p3a_1klasa_cala_5q
+Wygenerowano: 2026-10-24 16:35:05
+================================================================================
+
+Dane
+----
+  gwiazd: 1352 | REF_CSV: gwiazdy_qift_kinematyka.csv | latenty: qiftdata
+  klasy kinematyczne: dysk (v_tot<70) = 686, halo (v_tot>220) = 50
+  referencja: jedna_klasa_cala -> cała populacja (1352)
+
+Kodowanie
+---------
+  kubity: q0=z_Fe, q1=z_alpha, q2=z_C, q3=z_N, q4=z_act
+  wymiar przestrzeni Hilberta: 32; obwód Ry(x·π/2) → Π RZZ(θ_ij) → Ry(x·π/2)
+
+Uczenie topologii (wyłącznie maksymalizacja przerwy masowej)
+------------------------------------------------------------
+  funkcja celu: −śr. przerwa(cała populacja) + 0.0001·Σθ² + kara za θ > 80°
+  najlepszy start: θ0 = 20°
+    θ0 = 20°               przerwa 4.2619 kąty [45.9, 19.6, 13.8, 83.3, 22.3, 19.7, 89.9, 81.7, 60.0, 63.3]
+    losowy start 2         przerwa 4.2616 kąty [46.1, 19.4, 13.9, 83.3, 22.3, 19.7, 89.9, 81.7, 60.4, 63.2]
+    losowy start 1         przerwa 4.2221 kąty [18.5, 81.1, 15.7, 73.2, 31.9, 47.2, 87.6, 10.2, 63.1, 80.4]
+
+Kąty RZZ
+--------
+  para           cechy  wyuczony_deg
+   0-1  z_Fe ⊗ z_alpha         45.92
+   0-2      z_Fe ⊗ z_C         19.62
+   0-3      z_Fe ⊗ z_N         13.80
+   0-4    z_Fe ⊗ z_act         83.30
+   1-2   z_alpha ⊗ z_C         22.35
+   1-3   z_alpha ⊗ z_N         19.70
+   1-4 z_alpha ⊗ z_act         89.94
+   2-3       z_C ⊗ z_N         81.74
+   2-4     z_C ⊗ z_act         59.95
+   3-4     z_N ⊗ z_act         63.33
+
+Przerwa masowa i λ0 referencji (cała populacja)
+-----------------------------------------------
+  θ = 0                       : przerwa = 2.5264   λ0 = 0.8693
+  wyuczona (przerwa masowa)   : przerwa = 4.2619   λ0 = 0.9648
+
+Wrażliwość przerwy na kąt pojedynczej pary
+------------------------------------------
+  para 0-1: 3.9558–4.2617, maks. przy 45°
+  para 0-2: 3.7718–4.2617, maks. przy 21°
+  para 0-3: 3.7222–4.2617, maks. przy 15°
+  para 0-4: 3.4179–4.2730, maks. przy 90°
+  para 1-2: 3.7010–4.2615, maks. przy 21°
+  para 1-3: 3.6767–4.2616, maks. przy 21°
+  para 1-4: 3.1803–4.2625, maks. przy 90°
+  para 2-3: 3.9630–4.2729, maks. przy 90°
+  para 2-4: 4.1054–4.2619, maks. przy 60°
+  para 3-4: 4.1587–4.2619, maks. przy 63°
+
+Weryfikacja kodowania Qiskitem
+------------------------------
+  gwiazda 0: |⟨ψ_qiskit|ψ_numpy⟩|² = 1.000000000000
+  gwiazda 1: |⟨ψ_qiskit|ψ_numpy⟩|² = 1.000000000000
+  gwiazda 2: |⟨ψ_qiskit|ψ_numpy⟩|² = 1.000000000000
+  gwiazda 3: |⟨ψ_qiskit|ψ_numpy⟩|² = 1.000000000000
+  gwiazda 4: |⟨ψ_qiskit|ψ_numpy⟩|² = 1.000000000000

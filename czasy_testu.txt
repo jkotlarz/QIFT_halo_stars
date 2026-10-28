@@ -1,0 +1,11 @@
+04 p1a_1klasa_cala_7q 75 s rc=0
+04 p3a_1klasa_cala_5q 20 s rc=0
+03 p1b_1klasa_dysk_7q 666 s rc=0
+04 p1b_1klasa_dysk_7q 1052 s rc=0
+03 p2_2klasy_7q 722 s rc=0
+04 p2_2klasy_7q 1133 s rc=0
+03 p3b_1klasa_dysk_5q 100 s rc=0
+04 p3b_1klasa_dysk_5q 221 s rc=0
+03 p4_2klasy_5q 91 s rc=0
+04 p4_2klasy_5q 193 s rc=0
+DONE

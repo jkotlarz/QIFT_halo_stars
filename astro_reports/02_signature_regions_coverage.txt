@@ -1,0 +1,42 @@
+================================================================================
+POKRYCIE OKIEN SYGNATUR NA SIATCE
+Wygenerowano: 2026-10-24 10:33:51
+================================================================================
+
+Okna
+----
+           name    group       frame  lambda_min  lambda_max  width_A  n_pixels  grid_first  grid_last
+   Fe_4849_4855       fe vac (z air)        4850        4856     6.01         4        4851       4856
+   Fe_5315_5321       fe vac (z air)        5316        5322        6         4        5317       5322
+   Fe_5710_5750       fe vac (z air)        5712        5752    40.01        23        5713       5751
+       CaI_4227    alpha         vac        4226        4230        4         2        4227       4228
+      TiII_4369    alpha vac (z air)        4370        4375      5.3         3        4370       4374
+       TiO_4533    alpha vac (z air)        4534        4538        4         2        4535       4537
+       MgI_5152    alpha vac (z air)        5153        5159        6         4        5154       5159
+       MgI_5178    alpha vac (z air)        5179        5184        5         3        5180       5184
+       CaI_6163    alpha         vac        6162        6166        4         2        6163       6165
+  Halpha_wing_b hydrogen         vac        6550        6560       10         5        6552       6559
+  Halpha_wing_r hydrogen         vac        6569        6580       11         7        6569       6579
+         CaII_K      act         vac        3930        3940       10         6        3930       3939
+         CaII_H      act         vac        3965        3975       10         6        3965       3973
+    Halpha_core      act         vac        6561        6568        7         4        6562       6567
+  CaII_IRT_8500      act         vac        8496        8504        8         5        8497       8504
+  CaII_IRT_8544      act         vac        8540        8548        8         5        8541       8547
+  CaII_IRT_8665      act         vac        8660        8668        8         4        8662       8667
+       CH_Gband       ch         vac        4283        4318       35        20        4284       4317
+        CN_3883       cn         vac        3847        3884       37        21        3849       3883
+        CN_4215       cn         vac        4143        4178       35        21        4143       4178
+
+Dekodery
+--------
+  fe: grupy ['fe', 'hydrogen'] -> 43 pikseli
+  alpha: grupy ['alpha', 'hydrogen'] -> 28 pikseli
+  c: grupy ['ch'] -> 20 pikseli
+  n: grupy ['cn'] -> 42 pikseli
+  act: grupy ['act'] -> 30 pikseli
+
+Ostrzeżenia
+-----------
+  ⚠ okno CaI_4227 ma < 3 piksele – metryki jasności mogą być niestabilne
+  ⚠ okno TiO_4533 ma < 3 piksele – metryki jasności mogą być niestabilne
+  ⚠ okno CaI_6163 ma < 3 piksele – metryki jasności mogą być niestabilne

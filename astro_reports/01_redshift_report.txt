@@ -1,0 +1,45 @@
+================================================================================
+RAPORT REDSHIFTU I DEREDSHIFTU
+Wygenerowano: 2026-10-23 16:30:39
+================================================================================
+
+Ustawienia
+----------
+  Źródło z do deredshiftu (Z_SOURCE): catalog
+  Próg odrzucania linii: 0.0001
+  Linie: Hdelta, Hgamma, Hbeta, Halpha, CaII_8498, CaII_8542, CaII_8662
+  Źródła faktycznie użyte: catalog=1729
+
+Redshift katalogowy i zmierzony
+-------------------------------
+  z katalog              n=1729  mean=-4.3374e-05  std=+1.2388e-04  min=-7.5112e-04  q25=-1.0584e-04  med=-4.5331e-05  q75=+1.4944e-05  max=+1.2293e-03
+  z pomiar (mediana)     n=1729  mean=+2.4956e-04  std=+1.2445e-04  min=-4.4533e-04  q25=+1.8702e-04  med=+2.3906e-04  q75=+3.1336e-04  max=+1.5066e-03
+  Δz = pomiar - katalog  n=1729  mean=+2.9293e-04  std=+2.2414e-05  min=+1.9178e-04  q25=+2.7901e-04  med=+2.9344e-04  q75=+3.0738e-04  max=+3.7470e-04
+  |Δz|                   n=1729  mean=2.9293e-04  std=2.2414e-05  min=1.9178e-04  q25=2.7901e-04  med=2.9344e-04  q75=3.0738e-04  max=3.7470e-04
+  Δv = c·Δz [km/s]       n=1729  mean=+87.82  std=+6.72  min=+57.49  q25=+83.65  med=+87.97  q75=+92.15  max=+112.3
+  Korelacja Pearsona z_kat vs z_pomiar: r=0.9837, p=0, n=1729
+  Udział widm z udanym pomiarem: 100.0%
+  liczba linii zachowanych n=1729  mean=6.18  std=0.831  min=2  q25=6  med=6  q75=7  max=7
+
+Prędkości radialne i przesunięcie w pikselach
+---------------------------------------------
+  RV użyte = c·z [km/s]  n=1729  mean=-13  std=+37.14  min=-225.2  q25=-31.73  med=-13.59  q75=+4.48  max=+368.5
+  przesunięcie Hα [piksele] n=1729  mean=-0.1642  std=+0.4689  min=-2.843  q25=-0.4006  med=-0.1716  q75=+0.05656  max=+4.653
+  Gwiazd z |przesunięciem| > 1 piksel: 68
+  Gwiazd z |RV| > 100 km/s (kandydaci halo / szybkie): 38
+
+Walidacja: redshift resztkowy po deredshifcie (oczekiwane ≈ 0)
+--------------------------------------------------------------
+  z resztkowe            n=1729  mean=+2.9507e-04  std=+2.7926e-05  min=+1.8500e-04  q25=+2.7521e-04  med=+2.9555e-04  q75=+3.1486e-04  max=+3.8937e-04
+  |z resztkowe|          n=1729  mean=2.9507e-04  std=2.7926e-05  min=1.8500e-04  q25=2.7521e-04  med=2.9555e-04  q75=3.1486e-04  max=3.8937e-04
+  Mediana |z_res| / mediana |z_użyte| = 4.185
+
+Pomiar per linia (przed deredshiftem)
+-------------------------------------
+  Hdelta     med(z)=+1.473e-04  std=1.910e-04  pomiarów= 1729  zachowano=53.4%
+  Hgamma     med(z)=+2.029e-04  std=1.375e-04  pomiarów= 1729  zachowano=92.6%
+  Hbeta      med(z)=+2.798e-04  std=4.132e-04  pomiarów= 1729  zachowano=84.0%
+  Halpha     med(z)=+2.295e-04  std=1.248e-04  pomiarów= 1729  zachowano=98.8%
+  CaII_8498  med(z)=+2.924e-04  std=1.546e-04  pomiarów= 1729  zachowano=90.5%
+  CaII_8542  med(z)=+2.443e-04  std=1.305e-04  pomiarów= 1729  zachowano=99.3%
+  CaII_8662  med(z)=+2.440e-04  std=1.343e-04  pomiarów= 1729  zachowano=99.1%

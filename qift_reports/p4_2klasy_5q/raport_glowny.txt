@@ -1,0 +1,63 @@
+================================================================================
+QIFT – PODEJŚCIE p4_2klasy_5q (dwie_klasy)
+Wygenerowano: 2026-10-24 19:33:47
+================================================================================
+
+Ustawienia
+----------
+  kubity: ['z_Fe', 'z_alpha', 'z_C', 'z_N', 'z_act']
+  referencja: dwie_klasy; gwiazd referencyjnych: 736; foldów: 15
+  ranga projektora k = 1; mody odchyleń (T², Q): 3; α = 0.05
+  ewaluacja: 1081 gwiazd z dobrą astrometrią, halo kin. (v_tot > 220): 50
+  AP losowego rankingu = 0.046
+  kierunkowe: tylko gwiazdy z z_Fe < mediany referencji (+0.110)
+  kąty z kroku 03 (cała referencja) [°]: [28.8, 82.7, 17.3, 60.3, 31.8, 38.1, 87.1, 18.3, 47.4, 74.4]
+  kąty uczone w foldach [°]: średnia [42.5, 68.9, 22.2, 53.7, 30.5, 31.6, 81.7, 56.3, 23.4, 63.0]
+                            odch. std [21.0, 20.6, 6.0, 11.8, 6.1, 7.3, 10.5, 21.2, 12.7, 7.2]
+
+Ranking (AUC, AP z bootstrap 95%, precyzja@N)
+---------------------------------------------
+                                                metoda    AUC  AUC_lo  AUC_hi     AP  AP_lo  AP_hi    n  n_pos  precyzja@50
+  QIFT s = F_halo − F_dysk [wyuczona (przerwa masowa)] 0.9091  0.8443  0.9566 0.4891 0.3457 0.6335 1081     50         0.54
+          QIFT waga halo w [wyuczona (przerwa masowa)] 0.9163  0.8609  0.9574 0.4595 0.3497  0.643 1081     50         0.54
+                      QIFT s = F_halo − F_dysk [θ = 0] 0.8894  0.8248    0.94 0.3948 0.2708 0.5407 1081     50         0.46
+                              QIFT waga halo w [θ = 0] 0.8998  0.8449   0.943 0.3718 0.2771 0.5449 1081     50          0.5
+                                  regresja logistyczna  0.929  0.8651   0.975 0.5954 0.4547 0.7422 1081     50         0.66
+                                                   QDA 0.9172  0.8513  0.9673 0.5723 0.4327 0.7102 1081     50          0.6
+                                                 −z_Fe  0.929  0.8669   0.974  0.585 0.4381 0.7257 1081     50         0.68
+
+Decyzje (precyzja, czułość, F1, MCC z bootstrap 95%)
+----------------------------------------------------
+                          decyzja  n_oznaczonych  TP  FP  FN  precyzja  czulosc     F1    MCC  MCC_lo  MCC_hi  olbrzymy  FeH_lt_m1
+     QIFT s > 0 (F_halo > F_dysk)            160  40 120  10      0.25      0.8  0.381 0.4043  0.3202  0.4808     0.224     0.3333
+  QIFT kategoria = halo (4 grupy)             79  24  55  26    0.3038     0.48 0.3721 0.3443  0.2377  0.4548    0.2188     0.4583
+         regresja logistyczna > 0            150  44 106   6    0.2933     0.88   0.44 0.4722  0.3904  0.5427    0.3224     0.3497
+                          QDA > 0            136  42  94   8    0.3088     0.84 0.4516 0.4743  0.3823  0.5553    0.3182     0.3636
+
+Porównania parowane (bootstrap; a − b)
+--------------------------------------
+                                                                                 porownanie      dAUC  dAUC_lo   dAUC_hi      dAP  dAP_lo   dAP_hi  P_dAUC_le0
+  QIFT s = F_halo − F_dysk [wyuczona (przerwa masowa)]  −  QIFT s = F_halo − F_dysk [θ = 0]   0.01965 0.007195   0.03249  0.09425 0.04486   0.1443       0.001
+              QIFT s = F_halo − F_dysk [wyuczona (przerwa masowa)]  −  regresja logistyczna   -0.0199 -0.04182 0.0001318  -0.1063 -0.1733 -0.03083       0.974
+                               QIFT s = F_halo − F_dysk [wyuczona (przerwa masowa)]  −  QDA -0.008147 -0.04434   0.03908 -0.08318 -0.1752  0.01874       0.658
+                             QIFT s = F_halo − F_dysk [wyuczona (przerwa masowa)]  −  −z_Fe  -0.01994 -0.03508 -0.007177 -0.09592 -0.1452 -0.03923           1
+
+Odsetek oznaczonych wg populacji Toomre'a (pierwsze 3 decyzje)
+--------------------------------------------------------------
+  <50 cienki_dysk      n= 573 | QIFT s > 0 (F_halo > F_dysk): 0.04 | QIFT kategoria = halo (4 gru: 0.01 | regresja logistyczna > 0: 0.05
+  50-70 przejsciowa    n= 283 | QIFT s > 0 (F_halo > F_dysk): 0.06 | QIFT kategoria = halo (4 gru: 0.02 | regresja logistyczna > 0: 0.06
+  70-180 gruby_dysk    n= 397 | QIFT s > 0 (F_halo > F_dysk): 0.23 | QIFT kategoria = halo (4 gru: 0.12 | regresja logistyczna > 0: 0.19
+  180-220 przejsciowa  n=  20 | QIFT s > 0 (F_halo > F_dysk): 0.55 | QIFT kategoria = halo (4 gru: 0.30 | regresja logistyczna > 0: 0.45
+  >220 halo            n=  63 | QIFT s > 0 (F_halo > F_dysk): 0.81 | QIFT kategoria = halo (4 gru: 0.46 | regresja logistyczna > 0: 0.86
+  brak                 n=  16 | QIFT s > 0 (F_halo > F_dysk): 0.00 | QIFT kategoria = halo (4 gru: 0.00 | regresja logistyczna > 0: 0.06
+
+Kategorie QIFT wg populacji Toomre'a
+------------------------------------
+  kategoria_QIFT       dysk  halo  nowość  pośrednia
+  populacja_toomre                                  
+  <50 cienki_dysk       496     8      23         46
+  50-70 przejsciowa     238     5       9         31
+  70-180 gruby_dysk     239    48      13         97
+  180-220 przejsciowa     3     6       2          9
+  >220 halo               7    29      18          9
+  brak                   14     0       1          1

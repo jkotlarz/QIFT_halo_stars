@@ -1,0 +1,64 @@
+================================================================================
+DOCIĄGNIĘCIE [C/Fe], [N/Fe] I AKTYWNOŚCI CHROMOSFERYCZNEJ
+Wygenerowano: 2026-10-24 09:41:30
+================================================================================
+
+Źródła i rozpoznane kolumny
+---------------------------
+Indeksy własne:
+  katalog widm: C:\Users\User\Documents\Publikacje\005_abundancje\widma
+  zmierzono 1729 widm, brak pliku 0, błąd odczytu 0
+  CaK     : mediana 3 pikseli w rdzeniu/paśmie
+  CaH     : mediana 3 pikseli w rdzeniu/paśmie
+  HK_V    : mediana 22 pikseli w rdzeniu/paśmie
+  HK_R    : mediana 22 pikseli w rdzeniu/paśmie
+  Ha_core : mediana 2 pikseli w rdzeniu/paśmie
+  IRT     : mediana 4 pikseli w rdzeniu/paśmie
+  G4300   : mediana 35 pikseli w rdzeniu/paśmie
+  CN4215  : mediana 36 pikseli w rdzeniu/paśmie
+  CN3883  : mediana 42 pikseli w rdzeniu/paśmie
+  tabela VizieR: J/ApJS/245/34/catalog
+  VizieR J/ApJS/245/34/catalog: rozpoznane kolumny c_fe←[C/Fe], c_fe_err←None, n_fe←[N/Fe], n_fe_err←None, obsid_kat←None
+  VizieR J/ApJS/245/34/catalog: kolumny flag: ['q_[C/Fe]', 'q_[N/Fe]', 'Mult']
+  CaIIHK_Sindex_LAMOST_DR7_LRS.csv: kolumny S_L←S_L, S_L_err←S_L_err, S_tri←S_tri, S_tri_err←S_tri_err, S_rec←S_rec, S_rec_err←S_rec_err, akt_snrg←snrg
+  CaIIHK_Sindex_LAMOST_DR7_LRS.csv: 1016 wspólnych widm
+
+Pokrycie
+--------
+  widma: [C/Fe]  1721/1729, [N/Fe]  1442/1729, S_L  1016/1729, S własny  1728/1729
+  kotwice (po kontroli jakości): C  1550/1729, N  1297/1729, aktywność  1535/1729
+  gwiazdy: [C/Fe]  1344/1352, S_L   783/1352
+  pokrycie wg populacji Toomre'a (gwiazdy z [C/Fe] / z S_L / razem):
+    180-220 przejsciowa      20 /    2 /   20
+    50-70 przejsciowa       283 /  176 /  283
+    70-180 gruby_dysk       395 /  193 /  397
+    <50 cienki_dysk         573 /  395 /  573
+    >220 halo                57 /    5 /   63
+    brak                     16 /   12 /   16
+
+Kontrola: indeksy własne vs katalogi
+------------------------------------
+  Spearman(idx_S_wlasny, S_L) = +0.962  (n=1015)
+  Spearman(idx_G4300_EW, c_fe) = -0.598  (n=1721)
+  Spearman(idx_CN3883_S3839, n_fe) = +0.534  (n=1442)
+  Spearman(idx_CN4215_mag, n_fe) = +0.479  (n=1442)
+
+Kontrola jakości kotwic
+-----------------------
+  błąd [C/Fe], [N/Fe] ≤ 0.2 dex (jeśli katalog podaje błędy), Teff w (3800.0, 7000.0),
+  flaga q_[X/Fe] = 1, Mult ≠ NO
+  aktywność: log10(S / poziom bazowy(Teff, [Fe/H])); tylko log g ≥ 3.5
+  [C/N] u olbrzymów ubogich w metale zależy także od dodatkowego mieszania
+  (powyżej 'bump' na RGB), nie tylko od masy i wieku.
+
+Okna indeksów własnych (próżnia, Å)
+-----------------------------------
+  CaK      {'core': [(3933.28, 3936.28)]}
+  CaH      {'core': [(3968.09, 3971.09)]}
+  HK_V     {'core': [(3892.17, 3912.17)]}
+  HK_R     {'core': [(3992.2, 4012.2)]}
+  Ha_core  {'core': [(6563.11, 6566.11)], 'cont': [(6545.0, 6555.0), (6575.0, 6585.0)]}
+  IRT      {'core': [(8498.9, 8501.9), (8542.9, 8545.9), (8663.0, 8666.0)], 'cont': [(8475.0, 8485.0), (8562.0, 8572.0), (8680.0, 8690.0)]}
+  G4300    {'band': (4282.6, 4317.6), 'cont': [(4267.6, 4283.8), (4320.1, 4336.3)]}
+  CN3883   {'band': (3847.1, 3884.1), 'cont': [(3884.1, 3917.1)]}
+  CN4215   {'band': (4143.3, 4178.3), 'cont': [(4085.0, 4097.5), (4245.3, 4285.3)]}

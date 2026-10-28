@@ -1,0 +1,65 @@
+================================================================================
+TOPOLOGIA KONTRASTOWA – k3_kontrast_chemia_5q
+Wygenerowano: 2026-10-24 22:16:10
+================================================================================
+
+Dane
+----
+  gwiazd: 1352; dysk (v_tot < 70) = 686, halo (v_tot > 220) = 50
+  kubity: q0=z_Fe, q1=z_alpha, q2=z_C, q3=z_N, q4=z_act
+  wymiar przestrzeni Hilberta: 32; obwód Ry(x·π/2) → Π RZZ(θ_ij) → Ry(x·π/2)
+
+Zmienne w dysku i halo (δ Cliffa = 2·AUC − 1; „różna”, gdy |δ| ≥ 0.40)
+----------------------------------------------------------------------
+  zmienna  mediana_dysk  mediana_halo  delta_Cliffa  abs_delta  d_Cohena   p_MW   p_KS   klasa
+     z_Fe        0.1730       -2.0894       -0.8935     0.8935   -3.1945 0.0000 0.0000   różna
+  z_alpha       -0.2263        0.3488        0.3910     0.3910    0.9182 0.0000 0.0000 podobna
+      z_C       -0.1407        0.5909        0.3278     0.3278    0.8036 0.0001 0.0004 podobna
+      z_N        0.0380       -0.2667       -0.2323     0.2323   -0.7054 0.0061 0.0006 podobna
+    z_act        0.0997        0.3508        0.2423     0.2423    0.2610 0.0042 0.0001 podobna
+
+Uczenie topologii (kryterium kontrastowe)
+-----------------------------------------
+  funkcja celu: −gładkie AUC(a0 halo > a0 dysk) + 0.002·Σθ²; a0 względem stanu podstawowego ρ_dysk
+    losowy start 1         koszt -0.9538  kąty [0.0, 0.0, 1.4, 4.7, 49.3, 31.8, 56.3, 25.9, 77.5, 21.9]
+    θ0 = 20°               koszt -0.9538  kąty [0.0, 0.0, 1.8, 4.7, 50.0, 30.7, 56.8, 26.6, 76.6, 22.3]
+    θ0 = 0°                koszt -0.9538  kąty [0.0, 0.0, 1.9, 4.6, 49.7, 30.4, 57.5, 27.3, 76.4, 21.9]
+    losowy start 2         koszt -0.9538  kąty [0.0, 0.0, 1.2, 4.8, 49.6, 29.7, 57.7, 28.0, 76.6, 21.5]
+
+Rozdzielenie halo/dysk
+----------------------
+  θ = 0                   : AUC(a0: halo vs dysk) = 0.9320   gładkie AUC = 0.9290   przerwa masowa dysku = 2.886   λ0 = 0.899
+  kontrastowa (wyuczona)  : AUC(a0: halo vs dysk) = 0.9661   gładkie AUC = 0.9622   przerwa masowa dysku = 3.509   λ0 = 0.952
+
+Kąty RZZ a różnice zmiennych (teoria)
+-------------------------------------
+           para             typ  max_abs_delta  suma_abs_delta  kat_deg  zysk_sama_para  strata_bez_pary
+   z_Fe–z_alpha   różna–podobna         0.8935          1.2845   0.0000          0.0000           0.0000
+       z_Fe–z_C   różna–podobna         0.8935          1.2213   0.0000          0.0000           0.0000
+       z_Fe–z_N   różna–podobna         0.8935          1.1258   1.4136         -0.0000           0.0000
+     z_Fe–z_act   różna–podobna         0.8935          1.1359   4.7424         -0.0001           0.0001
+    z_alpha–z_C podobna–podobna         0.3910          0.7187  49.3163          0.0066           0.0063
+    z_alpha–z_N podobna–podobna         0.3910          0.6233  31.8293          0.0017           0.0017
+  z_alpha–z_act podobna–podobna         0.3910          0.6333  56.3183          0.0094           0.0086
+        z_C–z_N podobna–podobna         0.3278          0.5601  25.9342          0.0006           0.0013
+      z_C–z_act podobna–podobna         0.3278          0.5701  77.5159          0.0107           0.0132
+      z_N–z_act podobna–podobna         0.2423          0.4746  21.9465          0.0007           0.0011
+
+  podobna–podobna   : n= 6  średni kąt  43.8°  mediana  40.6°
+  różna–podobna     : n= 4  średni kąt   1.5°  mediana   0.7°
+  Spearman(kąt, max|δ| pary) = -0.67 (p = 0.0342); teoria przewiduje wartość ujemną
+  Mann–Whitney: kąty par podobna–podobna > pozostałych: p = 0.00696
+  WERDYKT: topologia ZGODNA z teorią (podobne silnie, różne słabo sprzężone)
+
+Interpretacja ablacji
+---------------------
+  zysk_sama_para: zmiana gładkiego AUC, gdy włączona jest tylko ta para (kąt wyuczony),
+  strata_bez_pary: spadek gładkiego AUC po wyłączeniu tej pary w wyuczonej topologii.
+
+Weryfikacja kodowania Qiskitem
+------------------------------
+  gwiazda 0: |⟨ψ_qiskit|ψ_numpy⟩|² = 1.000000000000
+  gwiazda 1: |⟨ψ_qiskit|ψ_numpy⟩|² = 1.000000000000
+  gwiazda 2: |⟨ψ_qiskit|ψ_numpy⟩|² = 1.000000000000
+  gwiazda 3: |⟨ψ_qiskit|ψ_numpy⟩|² = 1.000000000000
+  gwiazda 4: |⟨ψ_qiskit|ψ_numpy⟩|² = 1.000000000000

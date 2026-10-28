@@ -1,0 +1,42 @@
+================================================================================
+RAPORT REKONSTRUKCJI OKIEN SYGNATUR
+Wygenerowano: 2026-10-24 11:16:25
+================================================================================
+
+MSE rekonstrukcji
+-----------------
+  recon_mse_fe       mean=3.049e-02  std=5.626e-02  min=5.685e-04  25%=7.548e-03  50%=1.631e-02  75%=3.392e-02  max=8.976e-01
+  recon_mse_alpha    mean=4.519e-02  std=6.125e-02  min=8.892e-04  25%=1.089e-02  50%=2.405e-02  75%=5.282e-02  max=5.885e-01
+  recon_mse_c        mean=1.286e-01  std=1.920e-01  min=7.602e-04  25%=1.746e-02  50%=5.391e-02  75%=1.613e-01  max=1.888e+00
+  recon_mse_n        mean=1.717e-01  std=2.705e-01  min=2.023e-03  25%=2.906e-02  50%=7.750e-02  75%=2.028e-01  max=4.561e+00
+  recon_mse_act      mean=1.596e-01  std=3.844e-01  min=1.090e-03  25%=2.436e-02  50%=6.457e-02  75%=1.653e-01  max=1.119e+01
+  recon_mse_total    mean=1.052e-01  std=1.475e-01  min=4.253e-03  25%=2.885e-02  50%=5.615e-02  75%=1.250e-01  max=2.232e+00
+
+Zależność MSE od parametrów
+---------------------------
+  Spearman(MSE_total, teff     ) = +0.001  (p=9.58e-01)
+  Spearman(MSE_total, logg     ) = -0.040  (p=9.62e-02)
+  Spearman(MSE_total, feh      ) = -0.026  (p=2.87e-01)
+  Spearman(MSE_total, alpha_m  ) = -0.034  (p=1.56e-01)
+  Spearman(MSE_total, c_fe_kotw) = +0.009  (p=7.09e-01)
+  Spearman(MSE_total, n_fe_kotw) = -0.054  (p=5.09e-02)
+  Spearman(MSE_total, akt_kotw ) = -0.052  (p=3.98e-02)
+  Spearman(MSE_total, snrg     ) = -0.141  (p=3.92e-09)
+
+15 gwiazd najgorzej rekonstruowanych
+------------------------------------
+  row= 1043  MSE=2.232e+00  Teff=4889 logg=4.61 [Fe/H]=-0.57 [α/M]=+0.29 K3
+  row= 1676  MSE=1.721e+00  Teff=6033 logg=4.32 [Fe/H]=-0.26 [α/M]=-0.02 G2
+  row=  998  MSE=1.554e+00  Teff=5747 logg=4.25 [Fe/H]=-0.11 [α/M]=+0.05 G3
+  row= 1661  MSE=1.219e+00  Teff=5864 logg=4.36 [Fe/H]=-0.31 [α/M]=+0.11 G2
+  row=  440  MSE=1.053e+00  Teff=5295 logg=4.63 [Fe/H]=-0.07 [α/M]=+0.14 G7
+  row= 1240  MSE=9.747e-01  Teff=5908 logg=4.23 [Fe/H]=+0.09 [α/M]=-0.10 G2
+  row=  728  MSE=9.679e-01  Teff=5691 logg=4.19 [Fe/H]=-0.27 [α/M]=+0.18 G2
+  row=  700  MSE=9.397e-01  Teff=6028 logg=4.24 [Fe/H]=+0.11 [α/M]=-0.08 G4
+  row= 1673  MSE=9.228e-01  Teff=6045 logg=4.10 [Fe/H]=-0.01 [α/M]=-0.03 G0
+  row=  590  MSE=8.600e-01  Teff=5272 logg=3.66 [Fe/H]=-0.59 [α/M]=+0.47 G3
+  row=  744  MSE=8.573e-01  Teff=5911 logg=4.14 [Fe/H]=-0.28 [α/M]=+0.08 G0
+  row=   88  MSE=8.020e-01  Teff=5834 logg=4.01 [Fe/H]=-0.11 [α/M]=-0.01 G2
+  row=  741  MSE=7.934e-01  Teff=5149 logg=3.40 [Fe/H]=-0.71 [α/M]=+0.36 F9
+  row=  677  MSE=7.490e-01  Teff=5986 logg=4.20 [Fe/H]=+0.12 [α/M]=+0.02 G1
+  row= 1055  MSE=7.460e-01  Teff=5722 logg=4.03 [Fe/H]=-0.26 [α/M]=+0.11 G2

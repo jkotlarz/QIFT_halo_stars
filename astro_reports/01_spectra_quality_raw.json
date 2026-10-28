@@ -1,0 +1,15 @@
+{
+  "n_stars": 1729,
+  "n_pixels": 3000,
+  "lambda_min": 3800.0,
+  "lambda_max": 9000.0,
+  "step_mean": 1.7339113037679226,
+  "step_median": 1.7339113037678544,
+  "step_min": 1.733911303766945,
+  "step_max": 1.733911303770583,
+  "monotonic": true,
+  "R_at_Halpha": 3784.968692305856,
+  "log_lambda_step_median": 0.00011766064311613533,
+  "nan_fraction_total": 0.0,
+  "n_stars_with_nan": 0
+}

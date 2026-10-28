@@ -1,0 +1,85 @@
+================================================================================
+RAPORT TOPOLOGII – p1a_1klasa_cala_7q
+Wygenerowano: 2026-10-24 14:40:53
+================================================================================
+
+Dane
+----
+  gwiazd: 1352 | REF_CSV: gwiazdy_qift_kinematyka.csv | latenty: qiftdata
+  klasy kinematyczne: dysk (v_tot<70) = 686, halo (v_tot>220) = 50
+  referencja: jedna_klasa_cala -> cała populacja (1352)
+
+Kodowanie
+---------
+  kubity: q0=w_atm_1, q1=w_atm_2, q2=z_Fe, q3=z_alpha, q4=z_C, q5=z_N, q6=z_act
+  wymiar przestrzeni Hilberta: 128; obwód Ry(x·π/2) → Π RZZ(θ_ij) → Ry(x·π/2)
+
+Uczenie topologii (wyłącznie maksymalizacja przerwy masowej)
+------------------------------------------------------------
+  funkcja celu: −śr. przerwa(cała populacja) + 0.0001·Σθ² + kara za θ > 80°
+  najlepszy start: losowy start 1
+    losowy start 1         przerwa 3.9121 kąty [3.2, 25.2, 4.0, 41.5, 4.0, 80.7, 6.6, 18.8, 51.4, 20.9, 83.0, 31.8, 43.7, 34.8, 80.4, 63.7, 40.5, 48.4, 54.2, 61.5, 54.1]
+    θ0 = 20°               przerwa 3.8873 kąty [8.1, 11.8, 38.7, 8.0, 83.5, 6.4, 9.2, 31.6, 27.4, 25.9, 84.7, 47.3, 45.9, 39.6, 51.0, 52.3, 21.5, 42.8, 43.9, 44.8, 2.2]
+    losowy start 2         przerwa 3.7907 kąty [8.4, 8.4, 34.8, 1.5, 20.4, 82.1, 6.5, 33.3, 30.2, 82.4, 32.9, 19.7, 22.8, 57.6, 56.2, 55.6, 62.5, 17.6, 18.5, 75.9, 15.0]
+
+Kąty RZZ
+--------
+  para             cechy  wyuczony_deg
+   0-1 w_atm_1 ⊗ w_atm_2          3.21
+   0-2    w_atm_1 ⊗ z_Fe         25.25
+   0-3 w_atm_1 ⊗ z_alpha          3.98
+   0-4     w_atm_1 ⊗ z_C         41.53
+   0-5     w_atm_1 ⊗ z_N          3.99
+   0-6   w_atm_1 ⊗ z_act         80.66
+   1-2    w_atm_2 ⊗ z_Fe          6.64
+   1-3 w_atm_2 ⊗ z_alpha         18.82
+   1-4     w_atm_2 ⊗ z_C         51.44
+   1-5     w_atm_2 ⊗ z_N         20.88
+   1-6   w_atm_2 ⊗ z_act         82.97
+   2-3    z_Fe ⊗ z_alpha         31.77
+   2-4        z_Fe ⊗ z_C         43.74
+   2-5        z_Fe ⊗ z_N         34.84
+   2-6      z_Fe ⊗ z_act         80.35
+   3-4     z_alpha ⊗ z_C         63.69
+   3-5     z_alpha ⊗ z_N         40.49
+   3-6   z_alpha ⊗ z_act         48.37
+   4-5         z_C ⊗ z_N         54.19
+   4-6       z_C ⊗ z_act         61.52
+   5-6       z_N ⊗ z_act         54.10
+
+Przerwa masowa i λ0 referencji (cała populacja)
+-----------------------------------------------
+  θ = 0                       : przerwa = 2.4621   λ0 = 0.7842
+  wyuczona (przerwa masowa)   : przerwa = 3.9121   λ0 = 0.9340
+
+Wrażliwość przerwy na kąt pojedynczej pary
+------------------------------------------
+  para 0-1: 3.3058–3.9122, maks. przy 3°
+  para 0-2: 3.5894–3.9115, maks. przy 24°
+  para 0-3: 3.4894–3.9105, maks. przy 6°
+  para 0-4: 3.7156–3.9118, maks. przy 42°
+  para 0-5: 3.7113–3.9116, maks. przy 3°
+  para 0-6: 3.3998–3.9121, maks. przy 81°
+  para 1-2: 3.3716–3.9105, maks. przy 6°
+  para 1-3: 3.5379–3.9105, maks. przy 18°
+  para 1-4: 3.6186–3.9115, maks. przy 51°
+  para 1-5: 3.5056–3.9121, maks. przy 21°
+  para 1-6: 3.2039–3.9114, maks. przy 84°
+  para 2-3: 3.5839–3.9117, maks. przy 33°
+  para 2-4: 3.7459–3.9098, maks. przy 45°
+  para 2-5: 3.7132–3.9116, maks. przy 36°
+  para 2-6: 3.5705–3.9120, maks. przy 81°
+  para 3-4: 3.5892–3.9115, maks. przy 63°
+  para 3-5: 3.7392–3.9109, maks. przy 39°
+  para 3-6: 3.6144–3.9112, maks. przy 48°
+  para 4-5: 3.8190–3.9120, maks. przy 54°
+  para 4-6: 3.8319–3.9102, maks. przy 60°
+  para 5-6: 3.8568–3.9121, maks. przy 54°
+
+Weryfikacja kodowania Qiskitem
+------------------------------
+  gwiazda 0: |⟨ψ_qiskit|ψ_numpy⟩|² = 1.000000000000
+  gwiazda 1: |⟨ψ_qiskit|ψ_numpy⟩|² = 1.000000000000
+  gwiazda 2: |⟨ψ_qiskit|ψ_numpy⟩|² = 1.000000000000
+  gwiazda 3: |⟨ψ_qiskit|ψ_numpy⟩|² = 1.000000000000
+  gwiazda 4: |⟨ψ_qiskit|ψ_numpy⟩|² = 1.000000000000

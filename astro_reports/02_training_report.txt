@@ -1,0 +1,67 @@
+================================================================================
+RAPORT TRENINGU VAE
+Wygenerowano: 2026-10-24 11:15:59
+================================================================================
+
+Architektura
+------------
+  enkoder: 3×[Conv1d(k=7) + PReLU + MaxPool(2)] (1→8→16→32 kanałów) → FC128 → FC64
+  głowy: w_atm (2, deterministyczne), mu/logvar (5: z_Fe, z_alpha, z_C, z_N, z_act)
+  dekoder fe    : ['z_Fe', 'w_atm_1', 'w_atm_2'] (uczy z_Fe) → 32 → 64 → 128 → okna ['fe', 'hydrogen'] (43 pikseli)
+  dekoder alpha : ['z_Fe', 'z_alpha', 'w_atm_1', 'w_atm_2'] (uczy z_alpha) → 32 → 64 → 128 → okna ['alpha', 'hydrogen'] (28 pikseli)
+  dekoder c     : ['z_C', 'z_Fe', 'w_atm_1', 'w_atm_2'] (uczy z_C) → 32 → 64 → 128 → okna ['ch'] (20 pikseli)
+  dekoder n     : ['z_C', 'z_N', 'z_Fe', 'w_atm_1', 'w_atm_2'] (uczy z_N) → 32 → 64 → 128 → okna ['cn'] (42 pikseli)
+  dekoder act   : ['z_act', 'z_Fe', 'w_atm_1', 'w_atm_2'] (uczy z_act) → 32 → 64 → 128 → okna ['act'] (30 pikseli)
+  dyskryminator: ['z_Fe', 'z_alpha'] → 32 → 32 → (Teff: 12 klas, logg: 10 klas)
+  normalizacja wejścia: none
+  liczba parametrów: encoder=1549761, linear_w=6, discriminator=1878, fe_decoder=16110, alpha_decoder=14207, c_decoder=13175, n_decoder=16045, act_decoder=14465
+
+Cele latentów i kary
+--------------------
+  w_atm_1 → logg  (waga dopasowania 1.0)
+  w_atm_2 → teff  (waga dopasowania 1.0)
+  z_Fe → feh  (waga dopasowania 1.0)
+  z_alpha → alpha_m  (waga dopasowania 1.0)
+  z_C → c_fe_kotw  (waga dopasowania 1.0)
+  z_N → n_fe_kotw  (waga dopasowania 1.0)
+  z_act → akt_kotw  (waga dopasowania 1.0)
+  z_C: kotwica 'c_fe_kotw' dla 1550 gwiazd
+  z_N: kotwica 'n_fe_kotw' dla 1297 gwiazd
+  z_act: kotwica 'akt_kotw' dla 1535 gwiazd
+  kara chemical_cross_leak: waga=0.0, redukcja=sum, pary=[('z_Fe', 'alpha_m'), ('z_alpha', 'feh')]
+  kara chemistry_in_atmosphere: waga=1.0, redukcja=mean, pary=[('w_atm_1', 'feh'), ('w_atm_1', 'alpha_m'), ('w_atm_2', 'feh'), ('w_atm_2', 'alpha_m')]
+  kara atmosphere_in_chemistry: waga=1.0, redukcja=mean, pary=[('z_Fe', 'teff'), ('z_Fe', 'logg'), ('z_alpha', 'teff'), ('z_alpha', 'logg')]
+  kara teff_in_CN: waga=0.5, redukcja=mean, pary=[('z_C', 'teff'), ('z_N', 'teff')]
+  kara atmosphere_in_activity: waga=0.5, redukcja=mean, pary=[('z_act', 'teff'), ('z_act', 'logg')]
+  kara atmosphere_cross_leak: waga=0.0, redukcja=sum, pary=[('w_atm_1', 'teff'), ('w_atm_2', 'logg')]
+
+Hiperparametry
+--------------
+  epoki=50, batch=16, lr=0.001, β_KL=0.005, λ_adv: [(0.3, 0.0), (0.5, 0.01), (0.75, 0.011)] / domyślnie 0.012
+
+Metryki (pierwsza / ostatnia epoka)
+-----------------------------------
+  rec_fe                               start=0.092476  koniec=0.031099  min=0.030759
+  rec_alpha                            start=0.156389  koniec=0.045659  min=0.045084
+  rec_c                                start=0.464512  koniec=0.114940  min=0.114940
+  rec_n                                start=0.869321  koniec=0.165315  min=0.165315
+  rec_act                              start=1.528137  koniec=0.136130  min=0.128492
+  total                                start=9.046795  koniec=1.096401  min=1.061053
+  kl                                   start=1.029428  koniec=4.482524  min=1.029428
+  adv_disc                             start=4.807391  koniec=4.681303  min=4.654532
+  adv_enc                              start=4.807004  koniec=4.665831  min=4.630419
+  fit_w_atm_1                          start=0.701869  koniec=0.018922  min=0.018204
+  fit_w_atm_2                          start=0.343795  koniec=0.014907  min=0.014848
+  fit_z_Fe                             start=0.767684  koniec=0.026790  min=0.024928
+  fit_z_alpha                          start=0.983289  koniec=0.045237  min=0.038480
+  fit_z_C                              start=0.554920  koniec=0.042665  min=0.033634
+  fit_z_N                              start=0.966053  koniec=0.060916  min=0.045216
+  fit_z_act                            start=1.018262  koniec=0.078929  min=0.052410
+  leak_chemical_cross_leak             start=0.283592  koniec=0.689390  min=0.283592
+  leak_chemistry_in_atmosphere         start=0.110453  koniec=0.122223  min=0.110453
+  leak_atmosphere_in_chemistry         start=0.174767  koniec=0.112228  min=0.103813
+  leak_teff_in_CN                      start=0.421263  koniec=0.123931  min=0.123931
+  leak_atmosphere_in_activity          start=0.188235  koniec=0.059598  min=0.049981
+  leak_atmosphere_cross_leak           start=0.603082  koniec=0.491389  min=0.444564
+  physical_total                       start=5.925841  koniec=0.614581  min=0.564823
+  lambda_adv                           start=0.000000  koniec=0.012000  min=0.000000

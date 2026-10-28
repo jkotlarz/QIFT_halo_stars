@@ -1,0 +1,51 @@
+================================================================================
+SPLĄTANIE ATMOSFERA–CHEMIA – p1a_1klasa_cala_7q
+Wygenerowano: 2026-10-24 17:01:57
+================================================================================
+
+Definicje
+---------
+  A = q0,q1 (w_atm_1, w_atm_2), B = q2..q6 (z_Fe, z_alpha, z_C, z_N, z_act)
+  S: entropia splątania A|B stanu gwiazdy [bit, maks. 2]; MI: informacja wzajemna zespołu ρ_grupy;
+  MI_przetasowane: po losowym sparowaniu chemii z atmosferą w grupie (≈ MI -> efekt kodowania);
+  p_perm_dMI: test permutacyjny różnicy MI między grupami; delta Cliffa ∈ [−1, 1];
+  porównania w obrębie karłów (log g ≥ 4) i olbrzymów (log g < 3.5) kontrolują stadium ewolucyjne.
+  Przy θ = 0 stany są produktowe: S ≡ 0 i log-negatywność ≡ 0 z definicji.
+
+Grupy
+-----
+  kodowanie           grupa   n  S_mediana  S_q16     S_q84      MI   MI_lo   MI_hi  MI_przetasowane    logneg  olbrzymy
+   wyuczona   dysk-normalne 667      1.016 0.8964     1.133   1.898   1.873   1.924            1.875     1.343   0.05997
+   wyuczona   dysk-anomalie  19      1.119  1.054     1.266   2.141   1.974   2.296            2.096     1.355         0
+   wyuczona    halo-wykryte  17     0.4929 0.2372     1.075   1.083  0.7106   1.498           0.9318    0.8672    0.8235
+   wyuczona halo-przeoczone  33      1.042 0.6667     1.156   1.784   1.651   1.948            1.754     1.275    0.3333
+   wyuczona     dysk (kin.) 686      1.018 0.8982     1.139   1.902   1.878   1.933            1.877     1.342   0.05831
+   wyuczona     halo (kin.)  50      0.976 0.4879      1.16   1.485   1.315   1.683            1.415     1.129       0.5
+      θ = 0   dysk-normalne 667          0     -0  9.61e-16 0.04731 0.04317 0.05316         0.001813         0   0.05997
+      θ = 0   dysk-anomalie  19  3.203e-16     -0 9.995e-16  0.1185 0.02005  0.2269          0.06049 4.485e-15         0
+      θ = 0    halo-wykryte  17          0     -0 3.203e-16  0.3263  0.1692  0.5528           0.1781 4.485e-15    0.8235
+      θ = 0 halo-przeoczone  33          0      0 6.407e-16 0.09384 0.08048  0.1611          0.06378 2.883e-15    0.3333
+      θ = 0     dysk (kin.) 686          0     -0  9.61e-16 0.05001 0.04456 0.05646         0.002084 3.203e-16   0.05831
+      θ = 0     halo (kin.)  50          0     -0 6.407e-16  0.1662   0.139  0.2734          0.07182 1.922e-15       0.5
+
+Porównania
+----------
+  kodowanie                     porownanie  n1  n2    S_med1    S_med2    p_MW_S  delta_Cliffa_S     dMI  p_perm_dMI n_karly  p_MW_S_karly  delta_Cliffa_karly n_olbrzymy  p_MW_S_olbrzymy  delta_Cliffa_olbrzymy
+   wyuczona dysk-anomalie vs dysk-normalne  19 667     1.119     1.016 0.0001218          0.5166  0.2434       0.008  18/559     7.157e-05              0.5496       0/40              NaN                    NaN
+   wyuczona     halo (kin.) vs dysk (kin.)  50 686     0.976     1.018   0.02517         -0.1895 -0.4161           0  22/577      0.000618              0.4298      25/40           0.1841                 -0.198
+   wyuczona  halo-wykryte vs dysk-anomalie  17  19    0.4929     1.119  0.001372         -0.6285  -1.059           0    3/18           NaN                 NaN       14/0              NaN                    NaN
+      θ = 0 dysk-anomalie vs dysk-normalne  19 667 3.203e-16         0       NaN             NaN 0.07117       0.022  18/559           NaN                 NaN       0/40              NaN                    NaN
+      θ = 0     halo (kin.) vs dysk (kin.)  50 686         0         0       NaN             NaN  0.1162       0.006  22/577           NaN                 NaN      25/40              NaN                    NaN
+      θ = 0  halo-wykryte vs dysk-anomalie  17  19         0 3.203e-16       NaN             NaN  0.2078       0.032    3/18           NaN                 NaN       14/0              NaN                    NaN
+
+Klasyczna informacja wzajemna atmosfera–chemia (latenty) [bit]
+--------------------------------------------------------------
+            grupa   n  MI_gauss  MI_KSG  MI_KSG_n30
+    dysk-normalne 667    0.8771    1.28      0.2469
+    dysk-anomalie  19     1.527  0.2076         NaN
+     halo-wykryte  17     2.407  0.3005         NaN
+  halo-przeoczone  33     0.754  0.2969      0.2147
+      dysk (kin.) 686    0.8776    1.34      0.3089
+      halo (kin.)  50     1.009  0.4707       0.374
+  MI_KSG_n30: średnia z 30 podprób po 30 gwiazd – porównywalna między grupami
+  (estymator KSG jest obciążony zależnie od liczności; MI_gauss mierzy tylko zależność liniową)

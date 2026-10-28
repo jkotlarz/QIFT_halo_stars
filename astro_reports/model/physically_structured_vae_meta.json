@@ -1,0 +1,552 @@
+{
+  "scaling": {
+    "teff": {
+      "mean": 5575.712890625,
+      "std": 418.05963134765625,
+      "n_valid": 1729
+    },
+    "logg": {
+      "mean": 4.084872245788574,
+      "std": 0.5793564915657043,
+      "n_valid": 1729
+    },
+    "feh": {
+      "mean": -0.2735743224620819,
+      "std": 0.384894996881485,
+      "n_valid": 1729
+    },
+    "alpha_m": {
+      "mean": 0.1525895893573761,
+      "std": 0.13938583433628082,
+      "n_valid": 1729
+    },
+    "c_fe_kotw": {
+      "mean": 0.01915007084608078,
+      "std": 0.13110792636871338,
+      "n_valid": 1550
+    },
+    "n_fe_kotw": {
+      "mean": -0.000691056891810149,
+      "std": 0.15394927561283112,
+      "n_valid": 1297
+    },
+    "akt_kotw": {
+      "mean": 0.05277189612388611,
+      "std": 0.061337586492300034,
+      "n_valid": 1535
+    }
+  },
+  "teff_bin_edges": [
+    -3.420022487640381,
+    -1.5306742191314697,
+    -1.0794696807861328,
+    -0.696653425693512,
+    -0.3366335928440094,
+    -0.07614465802907944,
+    0.12057425081729889,
+    0.3096616268157959,
+    0.4854026436805725,
+    0.703027069568634,
+    0.9484468102455139,
+    1.332147240638733,
+    2.184084415435791
+  ],
+  "logg_bin_edges": [
+    -6.016801357269287,
+    -1.2100876569747925,
+    -0.2593778967857361,
+    -0.0015053515089675784,
+    0.13347208499908447,
+    0.2539500892162323,
+    0.3606206476688385,
+    0.47246867418289185,
+    0.6302295327186584,
+    0.8446053862571716,
+    1.1808418035507202
+  ],
+  "created": "2026-10-24 11:15:58",
+  "input_len": 3000,
+  "decoder_pixels": {
+    "fe": 43,
+    "alpha": 28,
+    "c": 20,
+    "n": 42,
+    "act": 30
+  },
+  "signature_regions": [
+    {
+      "name": "Fe_4849_4855",
+      "group": "fe",
+      "lambda_min": 4850.35,
+      "lambda_max": 4856.36,
+      "frame": "vac (z air)",
+      "lambda_min_air": 4849.0,
+      "lambda_max_air": 4855.0
+    },
+    {
+      "name": "Fe_5315_5321",
+      "group": "fe",
+      "lambda_min": 5316.48,
+      "lambda_max": 5322.48,
+      "frame": "vac (z air)",
+      "lambda_min_air": 5315.0,
+      "lambda_max_air": 5321.0
+    },
+    {
+      "name": "Fe_5710_5750",
+      "group": "fe",
+      "lambda_min": 5711.58,
+      "lambda_max": 5751.59,
+      "frame": "vac (z air)",
+      "lambda_min_air": 5710.0,
+      "lambda_max_air": 5750.0
+    },
+    {
+      "name": "CaI_4227",
+      "group": "alpha",
+      "lambda_min": 4225.9,
+      "lambda_max": 4229.9,
+      "frame": "vac"
+    },
+    {
+      "name": "TiII_4369",
+      "group": "alpha",
+      "lambda_min": 4369.93,
+      "lambda_max": 4375.23,
+      "frame": "vac (z air)",
+      "lambda_min_air": 4368.7,
+      "lambda_max_air": 4374.0
+    },
+    {
+      "name": "TiO_4533",
+      "group": "alpha",
+      "lambda_min": 4534.27,
+      "lambda_max": 4538.27,
+      "frame": "vac (z air)",
+      "lambda_min_air": 4533.0,
+      "lambda_max_air": 4537.0
+    },
+    {
+      "name": "MgI_5152",
+      "group": "alpha",
+      "lambda_min": 5153.44,
+      "lambda_max": 5159.44,
+      "frame": "vac (z air)",
+      "lambda_min_air": 5152.0,
+      "lambda_max_air": 5158.0
+    },
+    {
+      "name": "MgI_5178",
+      "group": "alpha",
+      "lambda_min": 5179.44,
+      "lambda_max": 5184.44,
+      "frame": "vac (z air)",
+      "lambda_min_air": 5178.0,
+      "lambda_max_air": 5183.0
+    },
+    {
+      "name": "CaI_6163",
+      "group": "alpha",
+      "lambda_min": 6161.9,
+      "lambda_max": 6165.9,
+      "frame": "vac"
+    },
+    {
+      "name": "Halpha_wing_b",
+      "group": "hydrogen",
+      "lambda_min": 6550.0,
+      "lambda_max": 6560.0,
+      "frame": "vac"
+    },
+    {
+      "name": "Halpha_wing_r",
+      "group": "hydrogen",
+      "lambda_min": 6569.0,
+      "lambda_max": 6580.0,
+      "frame": "vac"
+    },
+    {
+      "name": "CaII_K",
+      "group": "act",
+      "lambda_min": 3929.8,
+      "lambda_max": 3939.8,
+      "frame": "vac",
+      "cont": [
+        [
+          3892.17,
+          3912.17
+        ],
+        [
+          3992.2,
+          4012.2
+        ]
+      ]
+    },
+    {
+      "name": "CaII_H",
+      "group": "act",
+      "lambda_min": 3964.6,
+      "lambda_max": 3974.6,
+      "frame": "vac",
+      "cont": [
+        [
+          3892.17,
+          3912.17
+        ],
+        [
+          3992.2,
+          4012.2
+        ]
+      ]
+    },
+    {
+      "name": "Halpha_core",
+      "group": "act",
+      "lambda_min": 6561.1,
+      "lambda_max": 6568.1,
+      "frame": "vac",
+      "cont": [
+        [
+          6545.0,
+          6555.0
+        ],
+        [
+          6575.0,
+          6585.0
+        ]
+      ]
+    },
+    {
+      "name": "CaII_IRT_8500",
+      "group": "act",
+      "lambda_min": 8496.4,
+      "lambda_max": 8504.4,
+      "frame": "vac",
+      "cont": [
+        [
+          8475.0,
+          8485.0
+        ],
+        [
+          8562.0,
+          8572.0
+        ]
+      ]
+    },
+    {
+      "name": "CaII_IRT_8544",
+      "group": "act",
+      "lambda_min": 8540.4,
+      "lambda_max": 8548.4,
+      "frame": "vac",
+      "cont": [
+        [
+          8475.0,
+          8485.0
+        ],
+        [
+          8562.0,
+          8572.0
+        ]
+      ]
+    },
+    {
+      "name": "CaII_IRT_8665",
+      "group": "act",
+      "lambda_min": 8660.5,
+      "lambda_max": 8668.5,
+      "frame": "vac",
+      "cont": [
+        [
+          8562.0,
+          8572.0
+        ],
+        [
+          8680.0,
+          8690.0
+        ]
+      ]
+    },
+    {
+      "name": "CH_Gband",
+      "group": "ch",
+      "lambda_min": 4282.6,
+      "lambda_max": 4317.6,
+      "frame": "vac",
+      "cont": [
+        [
+          4267.6,
+          4283.8
+        ],
+        [
+          4320.1,
+          4336.3
+        ]
+      ]
+    },
+    {
+      "name": "CN_3883",
+      "group": "cn",
+      "lambda_min": 3847.1,
+      "lambda_max": 3884.1,
+      "frame": "vac",
+      "cont": [
+        [
+          3884.1,
+          3917.1
+        ]
+      ]
+    },
+    {
+      "name": "CN_4215",
+      "group": "cn",
+      "lambda_min": 4143.3,
+      "lambda_max": 4178.3,
+      "frame": "vac",
+      "cont": [
+        [
+          4085.0,
+          4097.5
+        ],
+        [
+          4245.3,
+          4285.3
+        ]
+      ]
+    }
+  ],
+  "decoders": {
+    "fe": {
+      "groups": [
+        "fe",
+        "hydrogen"
+      ],
+      "inputs": [
+        "z_Fe",
+        "w_atm_1",
+        "w_atm_2"
+      ],
+      "trains": "z_Fe"
+    },
+    "alpha": {
+      "groups": [
+        "alpha",
+        "hydrogen"
+      ],
+      "inputs": [
+        "z_Fe",
+        "z_alpha",
+        "w_atm_1",
+        "w_atm_2"
+      ],
+      "trains": "z_alpha"
+    },
+    "c": {
+      "groups": [
+        "ch"
+      ],
+      "inputs": [
+        "z_C",
+        "z_Fe",
+        "w_atm_1",
+        "w_atm_2"
+      ],
+      "trains": "z_C"
+    },
+    "n": {
+      "groups": [
+        "cn"
+      ],
+      "inputs": [
+        "z_C",
+        "z_N",
+        "z_Fe",
+        "w_atm_1",
+        "w_atm_2"
+      ],
+      "trains": "z_N"
+    },
+    "act": {
+      "groups": [
+        "act"
+      ],
+      "inputs": [
+        "z_act",
+        "z_Fe",
+        "w_atm_1",
+        "w_atm_2"
+      ],
+      "trains": "z_act"
+    }
+  },
+  "atm_latents": [
+    "w_atm_1",
+    "w_atm_2"
+  ],
+  "chem_latents": [
+    "z_Fe",
+    "z_alpha",
+    "z_C",
+    "z_N",
+    "z_act"
+  ],
+  "adv_latents": [
+    "z_Fe",
+    "z_alpha"
+  ],
+  "latent_targets": {
+    "w_atm_1": "logg",
+    "w_atm_2": "teff",
+    "z_Fe": "feh",
+    "z_alpha": "alpha_m",
+    "z_C": "c_fe_kotw",
+    "z_N": "n_fe_kotw",
+    "z_act": "akt_kotw"
+  },
+  "fit_weights": {
+    "w_atm_1": 1.0,
+    "w_atm_2": 1.0,
+    "z_Fe": 1.0,
+    "z_alpha": 1.0,
+    "z_C": 1.0,
+    "z_N": 1.0,
+    "z_act": 1.0
+  },
+  "fit_notes": [
+    "  z_C: kotwica 'c_fe_kotw' dla 1550 gwiazd",
+    "  z_N: kotwica 'n_fe_kotw' dla 1297 gwiazd",
+    "  z_act: kotwica 'akt_kotw' dla 1535 gwiazd"
+  ],
+  "leakage_penalties": {
+    "chemical_cross_leak": {
+      "weight": 0.0,
+      "reduction": "sum",
+      "pairs": [
+        [
+          "z_Fe",
+          "alpha_m"
+        ],
+        [
+          "z_alpha",
+          "feh"
+        ]
+      ]
+    },
+    "chemistry_in_atmosphere": {
+      "weight": 1.0,
+      "reduction": "mean",
+      "pairs": [
+        [
+          "w_atm_1",
+          "feh"
+        ],
+        [
+          "w_atm_1",
+          "alpha_m"
+        ],
+        [
+          "w_atm_2",
+          "feh"
+        ],
+        [
+          "w_atm_2",
+          "alpha_m"
+        ]
+      ]
+    },
+    "atmosphere_in_chemistry": {
+      "weight": 1.0,
+      "reduction": "mean",
+      "pairs": [
+        [
+          "z_Fe",
+          "teff"
+        ],
+        [
+          "z_Fe",
+          "logg"
+        ],
+        [
+          "z_alpha",
+          "teff"
+        ],
+        [
+          "z_alpha",
+          "logg"
+        ]
+      ]
+    },
+    "teff_in_CN": {
+      "weight": 0.5,
+      "reduction": "mean",
+      "pairs": [
+        [
+          "z_C",
+          "teff"
+        ],
+        [
+          "z_N",
+          "teff"
+        ]
+      ]
+    },
+    "atmosphere_in_activity": {
+      "weight": 0.5,
+      "reduction": "mean",
+      "pairs": [
+        [
+          "z_act",
+          "teff"
+        ],
+        [
+          "z_act",
+          "logg"
+        ]
+      ]
+    },
+    "atmosphere_cross_leak": {
+      "weight": 0.0,
+      "reduction": "sum",
+      "pairs": [
+        [
+          "w_atm_1",
+          "teff"
+        ],
+        [
+          "w_atm_2",
+          "logg"
+        ]
+      ]
+    }
+  },
+  "epochs": 50,
+  "batch_size": 16,
+  "learning_rate": 0.001,
+  "beta_kl": 0.005,
+  "input_normalization": "none",
+  "lambda_adv_schedule": [
+    [
+      0.3,
+      0.0
+    ],
+    [
+      0.5,
+      0.01
+    ],
+    [
+      0.75,
+      0.011
+    ]
+  ],
+  "default_lambda_adv": 0.012,
+  "n_parameters": {
+    "encoder": 1549761,
+    "linear_w": 6,
+    "discriminator": 1878,
+    "fe_decoder": 16110,
+    "alpha_decoder": 14207,
+    "c_decoder": 13175,
+    "n_decoder": 16045,
+    "act_decoder": 14465
+  }
+}
