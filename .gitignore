@@ -1,0 +1,13 @@
+# IDE
+.spyproject/
+.vscode/
+.idea/
+__pycache__/
+*.pyc
+# pobierane dane zewnętrzne (odtwarzalne skryptami 01b i 02a)
+dane_zewnetrzne/
+# oryginalne pliki FITS LAMOST (duże; pobierz z archiwum LAMOST)
+widma/
+# kopie zapasowe tworzone przez skrypty
+*.przed_01b.csv
+*.przed_02a.csv

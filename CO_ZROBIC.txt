@@ -1,0 +1,33 @@
+BRAKUJĄCE SKRYPTY – CO ZROBIĆ (kolejność)
+=========================================
+1. Skopiuj wszystkie pliki z tej paczki do katalogu głównego repozytorium
+   (02a_pobierz_C_N_aktywnosc.py ZASTĘPUJE obecny – jedyna zmiana: ścieżka do widm).
+
+2. Wersje 2-kubitowe (artykuł: U2, D2 z przerwą masową, B2) – razem < 1 min:
+     python 03_hilbert_topology_p3a_1klasa_cala_2q.py
+     python 04_qift_eigenstates_p3a_1klasa_cala_2q.py
+     python 03_hilbert_topology_p3b_1klasa_dysk_2q.py
+     python 04_qift_eigenstates_p3b_1klasa_dysk_2q.py
+     python 03_hilbert_topology_p4_2klasy_2q.py
+     python 04_qift_eigenstates_p4_2klasy_2q.py
+
+3. Kinematyka Gaia (opcjonalnie – odtwarza istniejący gwiazdy_qift_kinematyka.csv;
+   stary plik zostanie zapisany jako *.przed_01b.csv):
+     python 01b_gaia_kinematyka.py
+   Potem trzeba ponownie puścić 02a, bo dopisuje kotwice do tego pliku:
+     python 02a_pobierz_C_N_aktywnosc.py ŚCIEŻKA_DO_FITS
+
+4. Analizy i rysunki do artykułu (po krokach 2–3; kilka minut):
+     python 05_rysunki_artykulu.py      -> artykul/figures/, artykul/numbers_v3.json
+     python 05b_jakosc_latentow.py      -> Sect. 4.1 (przeciek, test adwersarialny)
+     python 05c_splatanie_kontrola.py   -> Sect. 4.5 (H3)
+     python 05d_sprzezenie_Fe.py        -> Sect. 4.4 (wymuszone sprzężenia Fe)
+
+5. Do gita: nowe skrypty, qift_reports/ i hilbertspace_topology/ dla trzech wersji 2q,
+   artykul/, README.md, requirements.txt, .gitignore; usuń z repo .spyproject/:
+     git rm -r --cached .spyproject
+
+Sprawdzone u mnie na kopii repozytorium: kroki 2 i 4 dają liczby zgodne z artykułem
+(jedyna różnica – QDA w 3. miejscu po przecinku). 01b sprawdziłem na lokalnej tabeli Gaia:
+odtwarza istniejący plik co do 0.005 km/s; samego pobierania z CDS XMatch nie mogłem
+przetestować (brak dostępu do sieci CDS w moim środowisku).

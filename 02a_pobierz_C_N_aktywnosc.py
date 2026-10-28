@@ -54,6 +54,7 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import os
 import numpy as np
 import pandas as pd
 
@@ -64,7 +65,9 @@ import pandas as pd
 REF_CSV = Path("gwiazdy_qift_kinematyka.csv")
 ASTRO_REPORTS_DIR = Path("astro_reports")
 CATALOG_CSV = ASTRO_REPORTS_DIR / "catalog_with_redshift.csv"
-SPECTRA_DIR = Path("C:/Users/User/Documents/Publikacje/005_abundancje/widma")            # oryginalne pliki LAMOST spec-obsid-<obsid>.fits
+# katalog z oryginalnymi plikami LAMOST spec-obsid-<obsid>.fits: zmienna środowiskowa QIFT_SPECTRA_DIR
+# albo pierwszy argument wywołania (python 02a_pobierz_C_N_aktywnosc.py ŚCIEŻKA); domyślnie ./widma
+SPECTRA_DIR = Path(os.environ.get("QIFT_SPECTRA_DIR", "widma"))
 FITS_NAME = "spec-obsid-{obsid}.fits"
 ANCHORS_OUT = ASTRO_REPORTS_DIR / "kotwice_C_N_aktywnosc.csv"
 CACHE_DIR = Path("dane_zewnetrzne")
@@ -655,4 +658,7 @@ def run():
 
 
 if __name__ == "__main__":
+    import sys
+    if len(sys.argv) > 1:
+        SPECTRA_DIR = Path(sys.argv[1])
     run()
