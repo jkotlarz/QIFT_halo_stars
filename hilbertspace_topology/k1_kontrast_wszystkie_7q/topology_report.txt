@@ -1,0 +1,79 @@
+================================================================================
+TOPOLOGIA KONTRASTOWA – k1_kontrast_wszystkie_7q
+Wygenerowano: 2026-10-28 09:26:52
+================================================================================
+
+Dane
+----
+  gwiazd: 1352; dysk (v_tot < 70) = 686, halo (v_tot > 220) = 50
+  kubity: q0=w_atm_1, q1=w_atm_2, q2=z_Fe, q3=z_alpha, q4=z_C, q5=z_N, q6=z_act
+  wymiar przestrzeni Hilberta: 128; obwód Ry(x·π/2) → Π RZZ(θ_ij) → Ry(x·π/2)
+
+Zmienne w dysku i halo (δ Cliffa = 2·AUC − 1; „różna”, gdy |δ| ≥ 0.40)
+----------------------------------------------------------------------
+  zmienna  mediana_dysk  mediana_halo  delta_Cliffa  abs_delta  d_Cohena   p_MW   p_KS   klasa
+  w_atm_1        0.3011       -0.6131       -0.5774     0.5774   -1.9696 0.0000 0.0000   różna
+  w_atm_2        0.2574       -0.0851       -0.1616     0.1616   -0.4001 0.0563 0.0413 podobna
+     z_Fe        0.1730       -2.0894       -0.8935     0.8935   -3.1945 0.0000 0.0000   różna
+  z_alpha       -0.2263        0.3488        0.3910     0.3910    0.9182 0.0000 0.0000 podobna
+      z_C       -0.1407        0.5909        0.3278     0.3278    0.8036 0.0001 0.0004 podobna
+      z_N        0.0380       -0.2667       -0.2323     0.2323   -0.7054 0.0061 0.0006 podobna
+    z_act        0.0997        0.3508        0.2423     0.2423    0.2610 0.0042 0.0001 podobna
+
+Uczenie topologii (kryterium kontrastowe)
+-----------------------------------------
+  funkcja celu: −gładkie AUC(a0 halo > a0 dysk) + 0.002·Σθ²; a0 względem stanu podstawowego ρ_dysk
+    losowy start 2         koszt -0.9709  kąty [13.3, 0.0, 22.1, 24.2, 0.0, 17.4, 0.1, 43.3, 37.7, 9.0, 53.0, 2.4, 0.0, 0.0, 2.4, 8.1, 0.5, 31.0, 4.4, 19.3, 8.8]
+    losowy start 1         koszt -0.9709  kąty [13.9, 0.0, 22.5, 26.0, 0.0, 15.5, 0.5, 42.1, 36.0, 9.8, 54.4, 2.6, 0.2, 0.0, 2.1, 8.7, 0.6, 32.2, 5.7, 21.0, 7.6]
+    θ0 = 0°                koszt -0.9708  kąty [13.8, 0.0, 22.8, 24.6, 0.0, 15.9, 0.0, 43.8, 37.8, 9.0, 51.4, 2.2, 0.7, 0.0, 2.0, 7.5, 0.8, 30.5, 3.2, 21.4, 7.8]
+    θ0 = 20°               koszt -0.9708  kąty [12.8, 0.0, 23.5, 24.2, 0.1, 16.6, 0.3, 41.3, 34.5, 10.0, 56.5, 3.1, 0.1, 0.0, 1.7, 10.2, 0.5, 31.4, 7.8, 20.7, 6.8]
+
+Rozdzielenie halo/dysk
+----------------------
+  θ = 0                   : AUC(a0: halo vs dysk) = 0.9537   gładkie AUC = 0.9517   przerwa masowa dysku = 2.500   λ0 = 0.826
+  kontrastowa (wyuczona)  : AUC(a0: halo vs dysk) = 0.9781   gładkie AUC = 0.9765   przerwa masowa dysku = 3.139   λ0 = 0.901
+
+Kąty RZZ a różnice zmiennych (teoria)
+-------------------------------------
+             para             typ  max_abs_delta  suma_abs_delta  kat_deg  zysk_sama_para  strata_bez_pary
+  w_atm_1–w_atm_2   różna–podobna         0.5774          0.7390  13.3015          0.0006           0.0006
+     w_atm_1–z_Fe     różna–różna         0.8935          1.4709   0.0000          0.0000           0.0000
+  w_atm_1–z_alpha   różna–podobna         0.5774          0.9683  22.1328          0.0003           0.0013
+      w_atm_1–z_C   różna–podobna         0.5774          0.9051  24.1850          0.0003           0.0013
+      w_atm_1–z_N   różna–podobna         0.5774          0.8097   0.0008         -0.0000          -0.0000
+    w_atm_1–z_act   różna–podobna         0.5774          0.8197  17.3694          0.0003           0.0008
+     w_atm_2–z_Fe   różna–podobna         0.8935          1.0551   0.0642         -0.0000          -0.0000
+  w_atm_2–z_alpha podobna–podobna         0.3910          0.5525  43.2947          0.0048           0.0047
+      w_atm_2–z_C podobna–podobna         0.3278          0.4893  37.6966          0.0045           0.0035
+      w_atm_2–z_N podobna–podobna         0.2323          0.3939   9.0137          0.0002           0.0002
+    w_atm_2–z_act podobna–podobna         0.2423          0.4039  52.9642          0.0084           0.0061
+     z_Fe–z_alpha   różna–podobna         0.8935          1.2845   2.4129         -0.0000           0.0000
+         z_Fe–z_C   różna–podobna         0.8935          1.2213   0.0000          0.0000           0.0000
+         z_Fe–z_N   różna–podobna         0.8935          1.1258   0.0000          0.0000           0.0000
+       z_Fe–z_act   różna–podobna         0.8935          1.1359   2.4312         -0.0000           0.0000
+      z_alpha–z_C podobna–podobna         0.3910          0.7187   8.1405         -0.0001           0.0001
+      z_alpha–z_N podobna–podobna         0.3910          0.6233   0.5366         -0.0000           0.0000
+    z_alpha–z_act podobna–podobna         0.3910          0.6333  30.9641          0.0001           0.0021
+          z_C–z_N podobna–podobna         0.3278          0.5601   4.4155         -0.0000           0.0000
+        z_C–z_act podobna–podobna         0.3278          0.5701  19.3333          0.0001           0.0005
+        z_N–z_act podobna–podobna         0.2423          0.4746   8.7935         -0.0000           0.0001
+
+  podobna–podobna   : n=10  średni kąt  21.5°  mediana  14.2°
+  różna–podobna     : n=10  średni kąt   8.2°  mediana   2.4°
+  różna–różna       : n= 1  średni kąt   0.0°  mediana   0.0°
+  Spearman(kąt, max|δ| pary) = -0.61 (p = 0.00301); teoria przewiduje wartość ujemną
+  Mann–Whitney: kąty par podobna–podobna > pozostałych: p = 0.0158
+  WERDYKT: topologia ZGODNA z teorią (podobne silnie, różne słabo sprzężone)
+
+Interpretacja ablacji
+---------------------
+  zysk_sama_para: zmiana gładkiego AUC, gdy włączona jest tylko ta para (kąt wyuczony),
+  strata_bez_pary: spadek gładkiego AUC po wyłączeniu tej pary w wyuczonej topologii.
+
+Weryfikacja kodowania Qiskitem
+------------------------------
+  gwiazda 0: |⟨ψ_qiskit|ψ_numpy⟩|² = 1.000000000000
+  gwiazda 1: |⟨ψ_qiskit|ψ_numpy⟩|² = 1.000000000000
+  gwiazda 2: |⟨ψ_qiskit|ψ_numpy⟩|² = 1.000000000000
+  gwiazda 3: |⟨ψ_qiskit|ψ_numpy⟩|² = 1.000000000000
+  gwiazda 4: |⟨ψ_qiskit|ψ_numpy⟩|² = 1.000000000000

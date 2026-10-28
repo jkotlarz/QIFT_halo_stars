@@ -4,7 +4,7 @@ save_data_on_exit = True
 save_history = True
 save_non_project_files = False
 project_type = 'empty-project-type'
-recent_files = ['04_qift_eigenstates_p2_2klasy_7q.py', '04_qift_eigenstates_p3a_1klasa_cala_5q.py', '04_qift_eigenstates_p3b_1klasa_dysk_5q.py', '04_qift_eigenstates_p4_2klasy_5q.py', '02a_pobierz_C_N_aktywnosc.py']
+recent_files = []
 
 [main]
 version = 0.2.0
