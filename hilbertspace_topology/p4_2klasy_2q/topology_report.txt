@@ -1,0 +1,45 @@
+================================================================================
+RAPORT TOPOLOGII – p4_2klasy_2q
+Wygenerowano: 2026-10-28 16:08:24
+================================================================================
+
+Dane
+----
+  gwiazd: 1352 | REF_CSV: gwiazdy_qift_kinematyka.csv | latenty: qiftdata
+  klasy kinematyczne: dysk (v_tot<70) = 686, halo (v_tot>220) = 50
+  referencja: dwie_klasy -> dysk (686), halo (50)
+
+Kodowanie
+---------
+  kubity: q0=z_Fe, q1=z_alpha
+  wymiar przestrzeni Hilberta: 4; obwód Ry(x·π/2) → Π RZZ(θ_ij) → Ry(x·π/2)
+
+Uczenie topologii (wyłącznie maksymalizacja przerwy masowej)
+------------------------------------------------------------
+  funkcja celu: −śr. przerwa(dysk/halo) + 0.0001·Σθ² + kara za θ > 80°
+  najlepszy start: θ0 = 20°
+    θ0 = 20°               przerwa 3.3837 kąty [90.0]
+    losowy start 1         przerwa 3.3837 kąty [90.0]
+    losowy start 2         przerwa 3.3837 kąty [90.0]
+
+Kąty RZZ
+--------
+  para          cechy  wyuczony_deg
+   0-1 z_Fe ⊗ z_alpha          90.0
+
+Przerwa masowa i λ0 referencji (dysk | halo)
+--------------------------------------------
+  θ = 0                       : przerwa = 3.0239 | 2.1889   λ0 = 0.9416 | 0.8363
+  wyuczona (przerwa masowa)   : przerwa = 3.7498 | 3.0176   λ0 = 0.9723 | 0.9269
+
+Wrażliwość przerwy na kąt pojedynczej pary
+------------------------------------------
+  para 0-1: 2.6064–3.3837, maks. przy 90°
+
+Weryfikacja kodowania Qiskitem
+------------------------------
+  gwiazda 0: |⟨ψ_qiskit|ψ_numpy⟩|² = 1.000000000000
+  gwiazda 1: |⟨ψ_qiskit|ψ_numpy⟩|² = 1.000000000000
+  gwiazda 2: |⟨ψ_qiskit|ψ_numpy⟩|² = 1.000000000000
+  gwiazda 3: |⟨ψ_qiskit|ψ_numpy⟩|² = 1.000000000000
+  gwiazda 4: |⟨ψ_qiskit|ψ_numpy⟩|² = 1.000000000000

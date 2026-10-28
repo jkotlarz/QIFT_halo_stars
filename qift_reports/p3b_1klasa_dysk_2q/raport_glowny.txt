@@ -1,0 +1,70 @@
+================================================================================
+QIFT – PODEJŚCIE p3b_1klasa_dysk_2q (jedna_klasa_dysk)
+Wygenerowano: 2026-10-28 16:07:25
+================================================================================
+
+Ustawienia
+----------
+  kubity: ['z_Fe', 'z_alpha']
+  referencja: jedna_klasa_dysk; gwiazd referencyjnych: 686; foldów: 15
+  ranga projektora k = 1; mody odchyleń (T², Q): 2; α = 0.05
+  ewaluacja: 1081 gwiazd z dobrą astrometrią, halo kin. (v_tot > 220): 50
+  AP losowego rankingu = 0.046
+  kierunkowe: tylko gwiazdy z z_Fe < mediany referencji (+0.173)
+  kąty z kroku 03 (cała referencja) [°]: [90.0]
+  kąty uczone w foldach [°]: średnia [90.0]
+                            odch. std [0.0]
+
+Ranking (AUC, AP z bootstrap 95%, precyzja@N)
+---------------------------------------------
+                                          metoda    AUC  AUC_lo  AUC_hi     AP  AP_lo  AP_hi    n  n_pos  precyzja@50
+             QIFT a0 [wyuczona (przerwa masowa)] 0.8859  0.8474  0.9234 0.4161 0.2857 0.5393 1081     50         0.42
+             QIFT T² [wyuczona (przerwa masowa)] 0.9479   0.918  0.9749 0.5837  0.434 0.7227 1081     50          0.7
+              QIFT Q [wyuczona (przerwa masowa)] 0.8842  0.8258  0.9364  0.444 0.3149 0.5735 1081     50         0.44
+              QIFT E [wyuczona (przerwa masowa)]  0.907  0.8717  0.9403 0.4502 0.3172 0.5758 1081     50         0.48
+  QIFT a0 kierunkowe [wyuczona (przerwa masowa)] 0.8882  0.8438  0.9275 0.4209  0.289 0.5458 1081     50         0.42
+                                 QIFT a0 [θ = 0] 0.9069  0.8721  0.9392 0.4376 0.3083 0.5659 1081     50         0.42
+                                 QIFT T² [θ = 0] 0.9439  0.9127  0.9714 0.5556 0.4066 0.7128 1081     50          0.6
+                                  QIFT Q [θ = 0] 0.8832  0.8249  0.9382  0.452  0.321 0.5815 1081     50         0.46
+                                  QIFT E [θ = 0] 0.9246  0.8918  0.9525 0.4901 0.3536 0.6238 1081     50         0.54
+                      QIFT a0 kierunkowe [θ = 0] 0.9033  0.8614  0.9406 0.4412 0.3117 0.5676 1081     50         0.42
+                               Mahalanobis (MCD) 0.9256  0.8934  0.9534  0.472 0.3325 0.6222 1081     50         0.54
+                                          PCA-T² 0.8827  0.8234  0.9301 0.4473 0.3061 0.5767 1081     50         0.48
+                                           PCA-Q 0.8288   0.743  0.9023 0.4721 0.3163 0.6376 1081     50         0.58
+                                Isolation Forest 0.9431  0.9162  0.9687 0.4965  0.359 0.6493 1081     50         0.58
+                                           −z_Fe  0.929  0.8669   0.974  0.585 0.4381 0.7257 1081     50         0.68
+
+Decyzje (precyzja, czułość, F1, MCC z bootstrap 95%)
+----------------------------------------------------
+                             decyzja  n_oznaczonych  TP  FP  FN  precyzja  czulosc     F1    MCC  MCC_lo  MCC_hi  olbrzymy  FeH_lt_m1
+  QIFT reguła oryginalna (F0≤q, E≥q)             51  21  30  29    0.4118     0.42 0.4158 0.3872  0.2595  0.5103    0.2857      0.619
+             QIFT a0 > próg (α=0.05)            136  28 108  22    0.2059     0.56 0.3011 0.2883  0.2008  0.3744     0.191     0.2753
+          QIFT a0 > próg, kierunkowe            125  27  98  23     0.216     0.54 0.3086 0.2922  0.1988  0.3829    0.2125     0.3063
+             QIFT T2 > próg (α=0.05)            143  42 101   8    0.2937     0.84 0.4352   0.46  0.3764  0.5411    0.2766     0.3404
+          QIFT T2 > próg, kierunkowe            133  41  92   9    0.3083     0.82 0.4481 0.4673  0.3753  0.5541    0.3041     0.3743
+            Mahalanobis (MCD) > próg            146  37 109  13    0.2534     0.74 0.3776 0.3898  0.2999  0.4692    0.2251     0.3246
+                       PCA-T² > próg            141  32 109  18     0.227     0.64 0.3351 0.3332  0.2395  0.4219    0.1657     0.3094
+                        PCA-Q > próg             89  32  57  18    0.3596     0.64 0.4604 0.4468  0.3333   0.536    0.4322     0.4407
+             Isolation Forest > próg            136  42  94   8    0.3088     0.84 0.4516 0.4743   0.392   0.556    0.2457     0.3657
+
+Porównania parowane (bootstrap; a − b)
+--------------------------------------
+                                                                   porownanie     dAUC   dAUC_lo  dAUC_hi      dAP   dAP_lo    dAP_hi  P_dAUC_le0
+                      QIFT a0 [wyuczona (przerwa masowa)]  −  QIFT a0 [θ = 0] -0.02101  -0.02983 -0.01321 -0.02159 -0.04478   0.00307           1
+                      QIFT T² [wyuczona (przerwa masowa)]  −  QIFT T² [θ = 0] 0.004054 -0.003675   0.0121  0.02802 -0.08409     0.135       0.155
+  QIFT T² [wyuczona (przerwa masowa)]  −  QIFT a0 [wyuczona (przerwa masowa)]  0.06206   0.03387  0.09392   0.1676  0.06949    0.2654           0
+                    QIFT a0 [wyuczona (przerwa masowa)]  −  Mahalanobis (MCD) -0.03973  -0.05896 -0.02333 -0.05598  -0.1268  0.006148           1
+                               QIFT a0 [wyuczona (przerwa masowa)]  −  PCA-T² 0.003162  -0.02653  0.04058 -0.03123 -0.06568   0.01225       0.477
+                     QIFT a0 [wyuczona (przerwa masowa)]  −  Isolation Forest  -0.0572  -0.08436 -0.03376 -0.08046  -0.1814 -0.002456           1
+                    QIFT T² [wyuczona (przerwa masowa)]  −  Mahalanobis (MCD)  0.02233  0.007903  0.03908   0.1116  0.03821    0.1784           0
+                               QIFT T² [wyuczona (przerwa masowa)]  −  PCA-T²  0.06522    0.0191   0.1196   0.1364  0.04648     0.228       0.001
+                                QIFT a0 [wyuczona (przerwa masowa)]  −  −z_Fe -0.04314  -0.09331  0.02033  -0.1689  -0.2621  -0.07576       0.929
+
+Odsetek oznaczonych wg populacji Toomre'a (pierwsze 3 decyzje)
+--------------------------------------------------------------
+  <50 cienki_dysk      n= 573 | QIFT reguła oryginalna (F0≤q: 0.01 | QIFT a0 > próg (α=0.05): 0.06 | QIFT a0 > próg, kierunkowe: 0.03
+  50-70 przejsciowa    n= 283 | QIFT reguła oryginalna (F0≤q: 0.01 | QIFT a0 > próg (α=0.05): 0.06 | QIFT a0 > próg, kierunkowe: 0.06
+  70-180 gruby_dysk    n= 397 | QIFT reguła oryginalna (F0≤q: 0.04 | QIFT a0 > próg (α=0.05): 0.20 | QIFT a0 > próg, kierunkowe: 0.20
+  180-220 przejsciowa  n=  20 | QIFT reguła oryginalna (F0≤q: 0.25 | QIFT a0 > próg (α=0.05): 0.40 | QIFT a0 > próg, kierunkowe: 0.40
+  >220 halo            n=  63 | QIFT reguła oryginalna (F0≤q: 0.48 | QIFT a0 > próg (α=0.05): 0.60 | QIFT a0 > próg, kierunkowe: 0.59
+  brak                 n=  16 | QIFT reguła oryginalna (F0≤q: 0.00 | QIFT a0 > próg (α=0.05): 0.06 | QIFT a0 > próg, kierunkowe: 0.06
